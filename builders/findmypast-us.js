@@ -30,13 +30,9 @@
     // after birth
     
     if( pd.birthDate ) {
-      var startYear = (new Date(pd.birthDate)).getFullYear() - 10;
-      var endYear = startYear + 60;
-      if( pd.deathDate ) {
-        endYear = (new Date(pd.deathDate)).getFullYear() + 10;
-      }
-      url = addQueryParam( url, 'eventyear', startYear );
-      url = addQueryParam( url, 'eventyear_offset', endYear );
+      var startYear = (new Date(pd.birthDate)).getFullYear();
+      url = addQueryParam( url, 'yearofbirth', startYear );
+      url = addQueryParam( url, 'yearofbirth_offset', 10 );
     }
     
     return url;
